@@ -19,5 +19,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use("/", todoRouters);
 app.use("/", userRoutes);
+app.use("/heath-check", (req, res) => {
+  res.status(200).send("Server is running");
+});
 
 module.exports = app;
